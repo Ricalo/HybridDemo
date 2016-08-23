@@ -1,6 +1,7 @@
 package com.microsoft.graph.hybrid;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements
     findViewById(R.id.email_sign_in_button).setOnClickListener(this);
     findViewById(R.id.email_create_account_button).setOnClickListener(this);
     findViewById(R.id.sign_out_button).setOnClickListener(this);
+    findViewById(R.id.microsoft_sign_in_button).setOnClickListener(this);
 
     // [START initialize_auth]
     mAuth = FirebaseAuth.getInstance();
@@ -216,6 +219,9 @@ public class MainActivity extends AppCompatActivity implements
       signIn(mEmailField.getText().toString(), mPasswordField.getText().toString());
     } else if (i == R.id.sign_out_button) {
       signOut();
+    } else if(i == R.id.microsoft_sign_in_button) {
+      Intent microsoftSignInIntent = new Intent(this, MicrosoftSignInActivity.class);
+      startActivity(microsoftSignInIntent);
     }
   }
 

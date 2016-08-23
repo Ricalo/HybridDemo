@@ -40,6 +40,12 @@
         style="@style/ThemeOverlay.MyTextDetail"
         tools:text="Firebase User ID: 123456789abc" />
 
+    <Button
+      android:id="@+id/microsoft_sign_in_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Sign in to Microsoft"/>
+
   </LinearLayout>
 
 
