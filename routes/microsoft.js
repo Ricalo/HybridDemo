@@ -8,7 +8,7 @@ router.get('/signin', function(req, res) {
   var redirectUrl = 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?'
   + 'client_id=2c0257d6-c28d-4d27-9b04-eca300f62dd1&'
   + 'response_type=code&'
-  + 'redirect_uri=http://localhost:3000/microsoft/callback&'
+  + 'redirect_uri=https://firebasehybrid.azurewebsites.net/microsoft/callback&'
   + 'scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read';  
 
   res.redirect(redirectUrl);
@@ -20,7 +20,7 @@ router.get('/callback', function(req, res1) {
       client_id: '2c0257d6-c28d-4d27-9b04-eca300f62dd1',
       //scope: 'openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read',
       code: req.query.code,
-      redirect_uri: 'http://localhost:3000/microsoft/callback',
+      redirect_uri: 'https://firebasehybrid.azurewebsites.net/microsoft/callback',
       grant_type: 'authorization_code',
       client_secret: '1RA7r5ZiAmHc7c4XcggvzmN'
   });
