@@ -44,7 +44,7 @@ router.get('/callback', function(req, res1) {
     res.on('end', function () {
       var accessToken = JSON.parse(responseBody).access_token;
       console.log(accessToken);
-      res1.send('The server has an access token');
+      res1.redirect("http://localhost/finish");
     });
   });
 

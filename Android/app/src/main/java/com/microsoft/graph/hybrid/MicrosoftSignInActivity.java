@@ -25,7 +25,7 @@ public class MicrosoftSignInActivity extends AppCompatActivity {
       public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
 
-        if(url.contains("https://firebasehybrid.azurewebsites.net/microsoft/callback?code")) {
+        if(url.equals("http://localhost/finish")) {
           Intent backToApp = new Intent(view.getContext(), MainActivity.class);
           startActivity(backToApp);
         }
