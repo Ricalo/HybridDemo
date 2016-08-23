@@ -14,7 +14,7 @@ router.get('/signin', function(req, res) {
   res.redirect(redirectUrl);
 });
 
-router.get('/callback', function(req, res) {
+router.get('/callback', function(req, res1) {
   var postData = querystring.stringify(
     {
       client_id: '2c0257d6-c28d-4d27-9b04-eca300f62dd1',
@@ -44,6 +44,7 @@ router.get('/callback', function(req, res) {
     res.on('end', function () {
       var accessToken = JSON.parse(responseBody).access_token;
       console.log(accessToken);
+      res1.send('The server has an access token');
     });
   });
 
